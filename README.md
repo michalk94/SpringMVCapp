@@ -2,7 +2,7 @@
 Project of web app, managing company's assets. For more information go to README
 
 This webapp will take care of Your company's assets. You will be able to add,edit and manage user and assets.
-In this project I wanted to see the effect of my work, so I decided to download(Sorry, I didn't write it) ready frontend for
+In this project I wanted to see the effect of my work, so I decided to download(Sorry, I didn't write it) ready-made frontend for
 this app. I'm taking care only for backend. App is not ready, it will be updated slowly, adding new functionalities.
 Technologies used in project:
 Spring Boot
