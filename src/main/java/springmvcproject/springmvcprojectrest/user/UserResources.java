@@ -40,4 +40,19 @@ public class UserResources {
                 .toUri();
         return ResponseEntity.created(location).body(savedUser);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDto> findById(@PathVariable long id) {
+        return userService.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDto> update(@PathVariable Long id, @RequestBody UserDto user) {
+        if (!id.equals(user.getId()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id has to the same");
+        UserDto updatedUser = userService.update(user);
+        return ResponseEntity.ok(updatedUser);
+    }
 }
