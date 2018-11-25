@@ -1,7 +1,7 @@
 package springmvcproject.springmvcprojectrest.user;
 
 import org.springframework.stereotype.Service;
-import springmvcproject.springmvcprojectrest.user.exception.DuplicatePeselException;
+import springmvcproject.springmvcprojectrest.exception.DuplicatePeselException;
 
 import java.util.List;
 import java.util.Optional;

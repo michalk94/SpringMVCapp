@@ -1,4 +1,4 @@
-package springmvcproject.springmvcprojectrest.user.exception;
+package springmvcproject.springmvcprojectrest.exception;
 
 
 import org.springframework.http.HttpStatus;
