@@ -37,4 +37,5 @@ public class AssetMapper {
         entity.setSerialNumber(asset.getSerialNumber());
         return entity;
     }
+
 }
