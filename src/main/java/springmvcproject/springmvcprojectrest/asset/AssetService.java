@@ -4,6 +4,7 @@ package springmvcproject.springmvcprojectrest.asset;
 import lombok.AllArgsConstructor;
 
 import org.springframework.stereotype.Service;
+import springmvcproject.springmvcprojectrest.exception.AssetNotFoundException;
 import springmvcproject.springmvcprojectrest.exception.DuplicateSerialNumberException;
 
 import java.util.List;
@@ -59,5 +60,14 @@ public class AssetService {
         Asset assetEntity = assetMapper.toEntity(asset);
         Asset savedAsset = assetRepository.save(assetEntity);
         return assetMapper.toDto(savedAsset);
+    }
+
+    List<AssetAssignmentDto> getAssetAssignments(Long id){
+        return assetRepository.findById(id)
+                .map(Asset::getAssignments)
+                .orElseThrow(AssetNotFoundException::new)
+                .stream()
+                .map(AssetAssignmentMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
